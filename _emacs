@@ -1,5 +1,6 @@
 
 ;; START PERSONAL SETTINGS
+(server-start)
 
 ;; browser
 (setq browse-url-generic-program (executable-find "opera")
