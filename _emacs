@@ -160,7 +160,7 @@
 (defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
-
+(require 'textmate)
 
 ;; no way!
 ;;(setq mac-option-key-is-meta nil)
