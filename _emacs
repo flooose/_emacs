@@ -142,9 +142,13 @@
 ;; windmove
 (windmove-default-keybindings) ;; default prefix is Meta
 (global-set-key (kbd "C-<")  'windmove-left)
+(global-set-key (kbd "C-c <")  'windmove-left)
 (global-set-key (kbd "C->") 'windmove-right)
+(global-set-key (kbd "C-c >") 'windmove-right)
 (global-set-key (kbd "C-S-p")    'windmove-up)
+(global-set-key (kbd "C-c p")    'windmove-up)
 (global-set-key (kbd "C-S-n")  'windmove-down)
+(global-set-key (kbd "C-c n")  'windmove-down)
 
 ;; for the console
 (global-set-key (kbd "C-c DEL") 'kill-whole-line)
@@ -152,8 +156,8 @@
 ;; finding files
 (require 'find-file-in-project)
 (setq ffip-find-options' "-not -regex \".*vendor.*\"")
+(global-set-key (kbd "C-c f") 'find-file-in-project)
 ;;(require 'find-file-in-git-repo)
-;;(global-set-key (kbd "C-c f") 'find-file-in-git-repo)
 
 ;; Display ido results vertically, rather than horizontally
 (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
@@ -167,3 +171,18 @@
 ;;(setq mac-command-key-is-meta t)
 ;;(setq mac-command-modifier 'meta)
 ;;(setq mac-option-modifier nil)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;; not sure if I want this
+;;(require 'powerline)
