@@ -155,9 +155,10 @@
 
 ;; finding files
 (require 'find-file-in-project)
-(setq ffip-find-options' "-not -regex \".*vendor.*\"")
+(setq ffip-find-options' "-not -regex \".*vendor.*\" -not -regex \".*rsync_cache.*\"")
 (setq ffip-full-paths' t)
-(concatenate 'list '("*.haml" ".erb" "*.sass") ffip-patterns)
+(setq ffip-limit 1000)
+(concatenate 'list '("*.haml" ".erb" "*.sass" "scss") ffip-patterns)
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 
 ;; Display ido results vertically, rather than horizontally
