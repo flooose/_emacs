@@ -159,14 +159,18 @@
 (setq ffip-full-paths' t)
 (concatenate 'list '("*.haml" ".erb" "*.sass") ffip-patterns)
 (global-set-key (kbd "C-c f") 'find-file-in-project)
-;;(require 'find-file-in-git-repo)
 
 ;; Display ido results vertically, rather than horizontally
 (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
 (defun ido-disable-line-trucation () (set (make-local-variable 'truncate-lines) nil))
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
-(require 'textmate)
+;; ack-and-a-half
+(require 'ack-and-a-half)
+(global-set-key (kbd "C-c a") 'ack-and-a-half)
+
+;; no longer needed because ffip works
+;;(require 'textmate)
 
 ;; no way!
 ;;(setq mac-option-key-is-meta nil)
