@@ -156,6 +156,8 @@
 ;; finding files
 (require 'find-file-in-project)
 (setq ffip-find-options' "-not -regex \".*vendor.*\"")
+(setq ffip-full-paths' t)
+(concatenate 'list '("*.haml" ".erb" "*.sass") ffip-patterns)
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 ;;(require 'find-file-in-git-repo)
 
