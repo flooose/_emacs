@@ -153,12 +153,16 @@
 ;; for the console
 (global-set-key (kbd "C-c DEL") 'kill-whole-line)
 
+;; find in file and find in directory
+(global-set-key (kbd "C-c s") 'find-grep-dired)
+(global-set-key (kbd "C-c F") 'find-name-dired)
+
 ;; finding files
 (require 'find-file-in-project)
 (setq ffip-find-options' "-not -regex \".*vendor.*\" -not -regex \".*rsync_cache.*\"")
 (setq ffip-full-paths' t)
-(setq ffip-limit 1000)
-(concatenate 'list '("*.haml" ".erb" "*.sass" "scss") ffip-patterns)
+(setq ffip-limit 2000)
+(concatenate 'list '("*.haml" ".erb" "*.sass" ".scss", ".xml") ffip-patterns)
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 
 ;; Display ido results vertically, rather than horizontally
@@ -167,8 +171,20 @@
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
 ;; ack-and-a-half
-(require 'ack-and-a-half)
+(add-to-list 'load-path "~/emacs.d/elpa/ack-and-a-half-1.1.0")
+(autoload 'ack-and-a-half-same "ack-and-a-half" nil t)
+(autoload 'ack-and-a-half "ack-and-a-half" nil t)
+(autoload 'ack-and-a-half-find-file-same "ack-and-a-half" nil t)
+(autoload 'ack-and-a-half-find-file "ack-and-a-half" nil t)
+;; Create shorter aliases
+(defalias 'ack 'ack-and-a-half)
+(defalias 'ack-same 'ack-and-a-half-same)
+(defalias 'ack-find-file 'ack-and-a-half-find-file)
+(defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 (global-set-key (kbd "C-c a") 'ack-and-a-half)
+
+;; show matching parens
+(show-paren-mode t)
 
 ;; no longer needed because ffip works
 ;;(require 'textmate)
