@@ -126,9 +126,9 @@
 (color-theme-dark-blue2)
 
 ;; get tabs right
-(setq c-basic-indent 2)
-(setq tab-width 2)
-(setq indent-tabs-mode nil)
+(setq-default c-basic-indent 2)
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
 
 ;; ido
 (setq ido-enable-flex-matching t)
@@ -153,12 +153,16 @@
 ;; for the console
 (global-set-key (kbd "C-c DEL") 'kill-whole-line)
 
+;; find file name and find grep
+(global-set-key (kbd "C-c F") 'find-name-dired)
+(global-set-key (kbd "C-c s") 'find-grep-dired)
+
 ;; finding files
 (require 'find-file-in-project)
 (setq ffip-find-options' "-not -regex \".*vendor.*\" -not -regex \".*rsync_cache.*\"")
 (setq ffip-full-paths' t)
-(setq ffip-limit 1000)
-(concatenate 'list '("*.haml" ".erb" "*.sass" "scss") ffip-patterns)
+(setq ffip-limit 2000)
+(concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml") ffip-patterns)
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 
 ;; Display ido results vertically, rather than horizontally
