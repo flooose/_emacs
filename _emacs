@@ -213,3 +213,9 @@
 
 ;; not sure if I want this
 ;;(require 'powerline)
+
+;; emacs-nave
+(add-to-list 'load-path "~/.emacs.d/plugins/emacs-nav")
+(require 'nav)
+(nav-disable-overeager-window-splitting)
+(global-set-key [f8] 'nav-toggle)
