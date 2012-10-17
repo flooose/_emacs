@@ -214,8 +214,15 @@
 ;; not sure if I want this
 ;;(require 'powerline)
 
-;; emacs-nave
+;; emacs-nav
 (add-to-list 'load-path "~/.emacs.d/plugins/emacs-nav")
 (require 'nav)
 (nav-disable-overeager-window-splitting)
 (global-set-key [f8] 'nav-toggle)
+
+;; multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-v C-S-v") 'mc/edit-lines)
+(global-set-key (kbd "C-c v") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c M-v") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c M-S-v") 'mc/mark-all-like-this)
