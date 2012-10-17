@@ -21,9 +21,6 @@
 ;; trailing white space goes away
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; font
-(set-face-attribute 'default nil :height 100)
-
 ;; force vertical split with bigger fonts
 ;;(setq split-height-threshold nil)
 ;;(setq split-width-threshold 0)
@@ -166,7 +163,7 @@
 (setq ffip-find-options' "-not -regex \".*vendor.*\" -not -regex \".*rsync_cache.*\"")
 (setq ffip-full-paths' t)
 (setq ffip-limit 1000)
-(setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml", "*.json") ffip-patterns))
+(setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml" "*.json") ffip-patterns))
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 
 ;; Display ido results vertically, rather than horizontally
