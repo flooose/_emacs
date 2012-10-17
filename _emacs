@@ -166,7 +166,7 @@
 (setq ffip-find-options' "-not -regex \".*vendor.*\" -not -regex \".*rsync_cache.*\"")
 (setq ffip-full-paths' t)
 (setq ffip-limit 1000)
-(setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml") ffip-patterns))
+(setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml", "*.json") ffip-patterns))
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 
 ;; Display ido results vertically, rather than horizontally
@@ -226,3 +226,7 @@
 (global-set-key (kbd "C-c v") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c M-v") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c M-S-v") 'mc/mark-all-like-this)
+
+;;;; evil for guests
+;;(require 'evil)
+;;(evil-mode 1)
