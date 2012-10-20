@@ -184,6 +184,9 @@
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 (global-set-key (kbd "C-c a") 'ack-and-a-half)
 
+;; scroll one line at a time
+(setq scroll-step 1)
+
 ;; show matching parens
 (show-paren-mode t)
 
@@ -224,6 +227,7 @@
 (global-set-key (kbd "C-c M-v") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c M-S-v") 'mc/mark-all-like-this)
 
-;;;; evil for guests
-;;(require 'evil)
+;; evil for guests
+(require 'evil)
 ;;(evil-mode 1)
+(global-set-key (kbd "C-c e") 'evil-mode)
