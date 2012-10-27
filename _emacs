@@ -190,9 +190,6 @@
 ;; show matching parens
 (show-paren-mode t)
 
-;; no longer needed because ffip works
-;;(require 'textmate)
-
 ;; no way!
 ;;(setq mac-option-key-is-meta nil)
 ;;(setq mac-command-key-is-meta t)
@@ -203,7 +200,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default))))
+ '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
+ '(ecb-options-version "2.40")
+ '(ecb-source-path (quote (("/home/chris/Projects/epic-relations" "epic-relations")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -230,4 +229,11 @@
 ;; evil for guests
 (require 'evil)
 ;;(evil-mode 1)
-(global-set-key (kbd "C-c e") 'evil-mode)
+;;(global-set-key (kbd "C-c e") 'evil-mode)
+
+(add-to-list 'load-path "~/.emacs.d/elpa/ecb-snapshot-20120830")
+(require 'ecb)
+(setq stack-trace-on-error t)
+(setq ecb-show-sources-in-directories-buffer 'always)
+(setq ecb-tree-buffer-style 'ascii-guides)
+(setq ecb-layout-name "left13")
