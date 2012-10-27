@@ -202,7 +202,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
  '(ecb-options-version "2.40")
- '(ecb-source-path (quote (("/home/chris/Projects/epic-relations" "epic-relations")))))
+ '(ecb-source-path (quote (("~/Projects/epic-relations" "epic-relations")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -219,21 +219,21 @@
 (nav-disable-overeager-window-splitting)
 (global-set-key [f8] 'nav-toggle)
 
-;; multiple cursors
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-v C-S-v") 'mc/edit-lines)
-(global-set-key (kbd "C-c v") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c M-v") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c M-S-v") 'mc/mark-all-like-this)
+;;;; multiple cursors
+;;(require 'multiple-cursors)
+;;(global-set-key (kbd "C-S-v C-S-v") 'mc/edit-lines)
+;;(global-set-key (kbd "C-c v") 'mc/mark-next-like-this)
+;;(global-set-key (kbd "C-c M-v") 'mc/mark-previous-like-this)
+;;(global-set-key (kbd "C-c M-S-v") 'mc/mark-all-like-this)
 
-;; evil for guests
-(require 'evil)
-;;(evil-mode 1)
-;;(global-set-key (kbd "C-c e") 'evil-mode)
+;;;; evil for guests
+;;(require 'evil)
+;;;;(evil-mode 1)
+;;;;(global-set-key (kbd "C-c e") 'evil-mode)
 
 (add-to-list 'load-path "~/.emacs.d/elpa/ecb-snapshot-20120830")
-(require 'ecb)
 (setq stack-trace-on-error t)
+(require 'ecb)
 (setq ecb-show-sources-in-directories-buffer 'always)
 (setq ecb-tree-buffer-style 'ascii-guides)
 (setq ecb-layout-name "left13")
