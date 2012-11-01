@@ -201,7 +201,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes (quote ("71b172ea4aad108801421cc5251edb6c792f3adbaecfa1c52e94e3d99634dee7" default)))
+ '(ecb-layout-window-sizes (quote (("left13" (ecb-directories-buffer-name 0.25 . 0.95)))))
  '(ecb-options-version "2.40")
+ '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
  '(ecb-source-path (quote (("~/Projects/epic-relations" "epic-relations")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
