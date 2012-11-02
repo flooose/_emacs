@@ -239,3 +239,13 @@
 (setq ecb-show-sources-in-directories-buffer 'always)
 (setq ecb-tree-buffer-style 'ascii-guides)
 (setq ecb-layout-name "left13")
+
+;;magit
+(require 'magit)
+;; change magit diff colors
+(eval-after-load 'magit
+'(progn
+   (set-face-foreground 'magit-diff-add "green3")
+   (set-face-foreground 'magit-diff-del "red3")
+   (when (not window-system)
+     (set-face-background 'magit-item-highlight "black"))))
