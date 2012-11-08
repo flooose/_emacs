@@ -249,3 +249,6 @@
    (set-face-foreground 'magit-diff-del "red3")
    (when (not window-system)
      (set-face-background 'magit-item-highlight "black"))))
+
+;; Access german keys with right alt
+(setq ns-right-alternate-modifier 'none)
