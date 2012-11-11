@@ -1,7 +1,4 @@
 
-;; START PERSONAL SETTINGS
-(server-start)
-
 ;; shut off splash screen
 (setq inhibit-splash-screen t)
 
@@ -40,8 +37,6 @@
 ;; sass
 (require 'sass-mode)
 (add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
-
-(setq default-tab-width 2)
 
 ;;(add-to-list 'load-path "~/.emacs.d/vendor/coffee-mode")
 ;;(require 'coffee-mode)
@@ -241,7 +236,7 @@
 (setq ecb-layout-name "left13")
 
 ;;magit
-(require 'magit)
+(add-hook 'after-init-hook (lambda () (require 'magit)))
 ;; change magit diff colors
 (eval-after-load 'magit
 '(progn
