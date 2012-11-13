@@ -27,9 +27,7 @@
 
 ;; Maramalade
 (require 'package)
-(add-to-list 'package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                                 ("marmalade" . "http://marmalade-repo.org/packages/")
-                                 ("melpa" . "http://melpa.milkbox.net/packages/")))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 
 ;; line numbers
 (global-linum-mode t)
@@ -249,3 +247,7 @@
 
 ;; Access german keys with right alt
 (setq ns-right-alternate-modifier 'none)
+
+;; rspec navigation
+(add-to-list 'load-path "~/.emacs.d/elpa/rspec-mode-1.3")
+(require 'rspec-mode)
