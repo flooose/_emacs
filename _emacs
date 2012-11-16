@@ -179,7 +179,8 @@
 (defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 (global-set-key (kbd "C-c a") 'ack-and-a-half)
 
-;; scroll one line at a time
+;; better scrolling with mouse and keyboard
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
 (setq scroll-step 1)
 
 ;; show matching parens
