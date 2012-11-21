@@ -167,7 +167,7 @@
 (add-hook 'ido-minibuffer-setup-hook 'ido-disable-line-trucation)
 
 ;; ack-and-a-half
-(add-to-list 'load-path "~/emacs.d/elpa/ack-and-a-half-1.1.0")
+(add-to-list 'load-path "~/emacs.d/elpa/ack-and-a-half-1.1.1")
 (autoload 'ack-and-a-half-same "ack-and-a-half" nil t)
 (autoload 'ack-and-a-half "ack-and-a-half" nil t)
 (autoload 'ack-and-a-half-find-file-same "ack-and-a-half" nil t)
@@ -210,12 +210,6 @@
 
 ;; not sure if I want this
 ;;(require 'powerline)
-
-;; emacs-nav
-(add-to-list 'load-path "~/.emacs.d/plugins/emacs-nav")
-(require 'nav)
-(nav-disable-overeager-window-splitting)
-(global-set-key [f8] 'nav-toggle)
 
 ;;;; multiple cursors
 ;;(require 'multiple-cursors)
