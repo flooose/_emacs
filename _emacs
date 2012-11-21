@@ -130,6 +130,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
+(global-set-key (kbd "C-c C-b") 'find-file-in-project)
 
 ;; better buffer names make ido even better with fuzzy searching
 (require 'uniquify)
@@ -160,6 +161,7 @@
 (setq ffip-limit 1000)
 (setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml" "*.json" "*.rake") ffip-patterns))
 (global-set-key (kbd "C-c f") 'find-file-in-project)
+(global-set-key (kbd "C-c C-p") 'find-file-in-project)
 
 ;; Display ido results vertically, rather than horizontally
 (setq ido-decorations (quote ("\n-> " "" "\n   " "\n   ..." "[" "]" " [No match]" " [Matched]" " [Not readable]" " [Too big]" " [Confirm]")))
