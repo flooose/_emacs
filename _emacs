@@ -246,3 +246,7 @@
 ;; rspec navigation
 (add-to-list 'load-path "~/.emacs.d/elpa/rspec-mode-1.3")
 (require 'rspec-mode)
+
+;; predictable behaviour for guests
+(delete-selection-mode 1)
+(global-set-key (kbd "TAB") 'self-insert-command)
