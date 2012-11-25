@@ -43,11 +43,6 @@
 ;;(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 ;;(add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 
-;;;; twitter
-;;(add-to-list 'load-path "~/.emacs.d/vendor/twittering-mode")
-;;(require 'twittering-mode)
-;;(setq twittering-use-master-password t)
-
 ;; json
 (add-to-list 'auto-mode-alist '("\\.json$" . javascript-mode))
 
@@ -55,11 +50,15 @@
 ;; about a great explanation on this.
 (setq js-indent-level 2)
 
+;;
 ;; Ruby
+;;
 (add-to-list 'auto-mode-alist '("Capfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.rake" . ruby-mode))
+;; saner indentation in parens
+(setq ruby-deep-indent-paren nil)
 
 ;; clojure
 (require 'clojure-mode)
@@ -69,7 +68,7 @@
 (require 'color-theme)
 (setq color-theme-is-global t)
 (color-theme-initialize)
-(color-theme-dark-blue2)
+(color-theme-gnome2)
 
 ;; Slime
 (setq inferior-lisp-program "clisp") ; your Lisp system
@@ -77,7 +76,11 @@
 ;;(require 'slime)
 ;;(slime-setup)
 
+;;
 ;; auto-complete
+;;
+
+;; dependency
 (add-to-list 'load-path "~/.emacs.d/elpa/popup-0.5/")
 (require 'popup)
 
@@ -86,7 +89,9 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
 (ac-config-default)
 
+;;
 ;; ccrypt integration
+;;
 (require 'ps-ccrypt "ps-ccrypt.el")
 
 ;; yaml
@@ -113,13 +118,6 @@
 
 ;; font size
 (set-face-attribute 'default nil :height 120)
-
-;; color-theme
-(setq color-theme-is-global t)
-(add-to-list 'load-path "~/.emacs.d/modes/color-theme-6.6.0")
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-dark-blue2)
 
 ;; get tabs right
 (setq-default c-basic-indent 2)
