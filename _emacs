@@ -98,14 +98,14 @@
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
-;;;; yasnippet
-;;(add-to-list 'load-path
-;;              "~/.emacs.d/plugins")
-;;(add-to-list 'load-path
-;;						 "~/.emacs.d/elpa/yasnippet-bundle-0.6.1")
-;;(require 'yasnippet-bundle)
-;;(yas/initialize)
-;;(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+;;
+;; yasnippet
+;;
+(add-to-list 'load-path
+						 "~/.emacs.d/elpa/yasnippet-bundle-0.6.1")
+(require 'yasnippet-bundle)
+(setq yas/root-directory "~/.emacs.d/snippets")
+(yas/load-directory yas/root-directory)
 
 ;;;; android-mode
 ;;(add-to-list 'load-path "~/emacs/android-mode")
