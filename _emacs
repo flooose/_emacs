@@ -250,3 +250,6 @@
 ;; predictable behaviour for guests
 (delete-selection-mode 1)
 (global-set-key (kbd "TAB") 'self-insert-command)
+
+(add-to-list 'load-path "~/.emacs/elpa/ruby-end-0.2.0")
+(require 'ruby-end)
