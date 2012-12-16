@@ -150,7 +150,7 @@ setting the variable `ffip-project-root'."
   (let* ((project-files (ffip-project-files))
          (files (mapcar 'car project-files))
          (file (if (and (boundp 'ido-mode) ido-mode)
-                   (ido-completing-read "Find file in project: " files)
+                   (ido-completing-read (format "Find file in %s: " (ffip-project-root)) files)
                  (completing-read "Find file in project: " files))))
     (find-file (cdr (assoc file project-files)))))
 

@@ -22,6 +22,7 @@
 ;; twittering mode
 ;;
 (add-to-list 'load-path "~/.emacs.d/elpa/twittering-mode-2.0.0")
+(require 'twittering-mode)
 
 ;; force vertical split with bigger fonts
 ;;(setq split-height-threshold nil)
