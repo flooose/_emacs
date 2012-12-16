@@ -18,6 +18,11 @@
 ;; trailing white space goes away
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;;
+;; twittering mode
+;;
+(add-to-list 'load-path "~/.emacs.d/elpa/twittering-mode-2.0.0")
+
 ;; force vertical split with bigger fonts
 ;;(setq split-height-threshold nil)
 ;;(setq split-width-threshold 0)
@@ -63,12 +68,20 @@
 ;; clojure
 (require 'clojure-mode)
 
-;; color-theme
-(add-to-list 'load-path "~/.emacs.d/modes/color-theme-6.6.0")
-(require 'color-theme)
-(setq color-theme-is-global t)
-(color-theme-initialize)
-(color-theme-gnome2)
+;;
+;; Old color theme
+;;
+;;;; color-theme
+;;(add-to-list 'load-path "~/.emacs.d/modes/color-theme-6.6.0")
+;;(require 'color-theme)
+;;(setq color-theme-is-global t)
+;;(color-theme-initialize)
+;;(color-theme-gnome2)
+
+;;
+;; New color themes
+;;
+(load-theme 'misterioso)
 
 ;; Slime
 (setq inferior-lisp-program "clisp") ; your Lisp system
