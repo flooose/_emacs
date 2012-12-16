@@ -84,6 +84,14 @@
 ;;
 (load-theme 'misterioso)
 
+(defun code-review ()
+  (interactive)
+  (load-theme 'dichromacy))
+
+(defun not-code-review ()
+  (interactive)
+  (load-theme 'misterioso))
+
 ;; Slime
 (setq inferior-lisp-program "clisp") ; your Lisp system
 ;;(add-to-list 'load-path "~/Projects/slime") ; your SLIME directory
