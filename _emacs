@@ -145,7 +145,7 @@
 (setq-default c-basic-indent 2)
 (setq-default tab-width 2)
 (setq-default indent-tabs-mode nil)
-(setq tab-stop-list (number-sequence 2 120 2)
+(setq tab-stop-list (number-sequence 2 120 2))
 
 ;; ido
 (setq ido-enable-flex-matching t)
