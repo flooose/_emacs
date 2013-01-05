@@ -73,7 +73,7 @@
 ;; color theme
 ;;
 
-(setq flooose-color-light 'solarized-light)
+(setq flooose-color-light 'dichromacy)
 (setq flooose-color-dark 'misterioso)
 
 ;; old color theme
