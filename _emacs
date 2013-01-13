@@ -8,6 +8,9 @@
 (setq auto-save-file-name-transforms
 			`((".*" ,temporary-file-directory t)))
 
+;; load configs for other programs
+(load-file "~/.emacs.d/config/gnus.el")
+
 ;; browser
 (setq browse-url-generic-program (executable-find "opera")
 			browse-url-browser-function 'browse-url-generic)
