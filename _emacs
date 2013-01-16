@@ -68,6 +68,15 @@
 (add-to-list 'auto-mode-alist '("\\.rake" . ruby-mode))
 ;; saner indentation in parens
 (setq ruby-deep-indent-paren nil)
+(defun ruby-mode-for-losers ()
+  (local-set-key (kbd "<enter>") 'newline-and-indent)
+  (local-set-key (kbd "C-j") 'newline-and-indent)
+  (local-set-key (kbd "<tab>") 'tab-to-tab-stop)
+  (local-set-key (kbd "C-<tab>") 'ruby-indent-command)
+  (local-set-key (kbd "{") 'self-insert-command)
+  (local-set-key (kbd "}") 'self-insert-command))
+
+(add-hook 'ruby-mode-hook 'ruby-mode-for-losers)
 
 ;; clojure
 (require 'clojure-mode)
