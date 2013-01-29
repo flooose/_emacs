@@ -293,5 +293,8 @@
 ;; predictable behaviour for guests
 (delete-selection-mode 1)
 
-(add-to-list 'load-path "~/.emacs/elpa/ruby-end-0.2.0")
+(add-to-list 'load-path "~/.emacs.d/elpa/ruby-end-0.2.0")
 (require 'ruby-end)
+
+(load-file "~/.emacs.d/ext/ack-and-a-half-ext.el")
+(autoload 'ack-and-a-half-ack-here "ack-and-a-half" nil t)
