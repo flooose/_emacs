@@ -297,3 +297,8 @@
 
 (load-file "~/.emacs.d/ext/ack-and-a-half-ext.el")
 (autoload 'ack-and-a-half-ack-here "ack-and-a-half" nil t)
+
+;; speedbar
+(speedbar-add-supported-extension ".rb")
+(setq speedbar-show-unknown-files t)
+(setq speedbar-use-images nil)
