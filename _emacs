@@ -89,13 +89,6 @@
 
 ;; old color theme
 
-;;;; color-theme
-;;(add-to-list 'load-path "~/.emacs.d/modes/color-theme-6.6.0")
-;;(require 'color-theme)
-;;(setq color-theme-is-global t)
-;;(color-theme-initialize)
-;;(color-theme-gnome2)
-
 (defun code-review ()
   (interactive)
   (load-theme flooose-color-light))
