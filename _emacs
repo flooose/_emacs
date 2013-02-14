@@ -242,7 +242,9 @@
  '(ecb-layout-window-sizes (quote (("left13" (ecb-directories-buffer-name 0.25 . 0.95)))))
  '(ecb-options-version "2.40")
  '(ecb-primary-secondary-mouse-buttons (quote mouse-1--mouse-2))
- '(ecb-source-path (quote (("~/Projects/epic-relations" "epic-relations")))))
+ '(ecb-source-path (quote (("~/Projects/epic-relations" "epic-relations"))))
+ '(tool-bar-mode nil)
+ '(menu-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
