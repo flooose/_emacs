@@ -21,18 +21,17 @@
 ;; trailing white space goes away
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;;
-;; twittering mode
-;;
-(add-to-list 'load-path "~/.emacs.d/elpa/twittering-mode-2.0.0")
-(require 'twittering-mode)
-
 ;; force vertical split with bigger fonts
 ;;(setq split-height-threshold nil)
 ;;(setq split-width-threshold 0)
 
 ;; modes
 (add-to-list 'load-path "~/.emacs.d/modes")
+
+;;
+;; twittering mode
+;;
+(require 'twittering-mode)
 
 ;; Maramalade
 (require 'package)
