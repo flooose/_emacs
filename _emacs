@@ -31,11 +31,13 @@
 ;;
 ;; twittering mode
 ;;
-(require 'twittering-mode)
+;;(require 'twittering-mode)
+(autoload 'twittering-mode "twittering-mode" "twitter" t )
 
-;; Maramalade
-(require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(eval-after-load "package"
+  '(progn
+     (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  ))
 
 ;; line numbers
 (global-linum-mode t)
@@ -188,11 +190,14 @@
 (global-set-key (kbd "C-c s") 'find-grep-dired)
 
 ;; finding files
-(require 'find-file-in-project)
-(setq ffip-find-options' "-not -regex \".*vendor.*\" -not -regex \".*rsync_cache.*\"")
-(setq ffip-full-paths' t)
-(setq ffip-limit 1000)
-(setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml" "*.json" "*.rake") ffip-patterns))
+(autoload 'find-file-in-project "find-file-in-project")
+(eval-after-load "find-file-in-project"
+  '(progn
+     (setq ffip-find-options' "-not -regex \".*vendor.*\" -not -regex \".*rsync_cache.*\"")
+     (setq ffip-full-paths' t)
+     (setq ffip-limit 1000)
+     (setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml" "*.json" "*.rake") ffip-patterns))
+  ))
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 (global-set-key (kbd "C-c C-p") 'find-file-in-project)
 
@@ -262,10 +267,12 @@
 
 (add-to-list 'load-path "~/.emacs.d/elpa/ecb-snapshot-20120830")
 (setq stack-trace-on-error t)
-(require 'ecb)
-(setq ecb-show-sources-in-directories-buffer 'always)
-(setq ecb-tree-buffer-style 'ascii-guides)
-(setq ecb-layout-name "left13")
+(autoload 'ecb "ecb")
+(eval-after-load "ecb"
+'(progn
+   (setq ecb-show-sources-in-directories-buffer 'always)
+   (setq ecb-tree-buffer-style 'ascii-guides)
+   (setq ecb-layout-name "left13")))
 
 ;;magit
 (add-hook 'after-init-hook (lambda () (require 'magit)))
@@ -294,6 +301,6 @@
 (autoload 'ack-and-a-half-ack-here "ack-and-a-half" nil t)
 
 ;; speedbar
-(speedbar-add-supported-extension ".rb")
+;;(speedbar-add-supported-extension ".rb")
 (setq speedbar-show-unknown-files t)
 (setq speedbar-use-images nil)
