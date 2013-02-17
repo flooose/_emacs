@@ -272,6 +272,7 @@
 ;; rspec navigation
 (add-to-list 'load-path "~/.emacs.d/elpa/rspec-mode-1.3")
 (require 'rspec-mode)
+(setq rspec-use-rake-flag nil)
 
 ;; predictable behaviour for guests
 (delete-selection-mode 1)
