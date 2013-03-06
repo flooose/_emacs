@@ -268,7 +268,8 @@
      (set-face-background 'magit-item-highlight "black"))))
 
 ;; Access german keys with right alt
-(setq ns-right-alternate-modifier 'none)
+(setq ns-alternate-modifier 'none)
+(setq ns-right-command-modifier 'meta)
 
 ;; rspec navigation
 (add-to-list 'load-path "~/.emacs.d/elpa/rspec-mode-1.3")
