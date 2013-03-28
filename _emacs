@@ -267,9 +267,9 @@
    (when (not window-system)
      (set-face-background 'magit-item-highlight "black"))))
 
-;; Access german keys with right alt
-(setq ns-alternate-modifier 'none)
-(setq ns-right-command-modifier 'meta)
+;; Set up mac
+(if (eq system-type 'darwin)
+    (load-file "~/.emacs.d/config/mac-de.el"))
 
 ;; rspec navigation
 (add-to-list 'load-path "~/.emacs.d/elpa/rspec-mode-1.3")
