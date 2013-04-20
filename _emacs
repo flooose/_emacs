@@ -197,7 +197,7 @@
      (setq ffip-find-options' "-not -regex \".*vendor.*\" -not -regex \".*rsync_cache.*\"")
      (setq ffip-full-paths' t)
      (setq ffip-limit 1000)
-     (setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml" "*.json" "*.rake") ffip-patterns))
+     (setq ffip-patterns (concatenate 'list '("*.haml" "*.erb" "*.sass" "*.scss" "*.xml" "*.yml" "*.json" "*.rake" "*.textile") ffip-patterns))
   ))
 (global-set-key (kbd "C-c f") 'find-file-in-project)
 (global-set-key (kbd "C-c C-p") 'find-file-in-project)
