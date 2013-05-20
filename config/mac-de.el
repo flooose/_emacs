@@ -1,8 +1,0 @@
-(global-set-key (kbd "M-5") "[")
-(global-set-key (kbd "M-6") "]")
-(global-set-key "\M-7" "|")
-(global-set-key "\M-/" "\\")
-(global-set-key "\M-8" "{")
-(global-set-key "\M-9" "}")
-(global-set-key "\M-l" "@")
-(global-set-key "\M-n" "~")
