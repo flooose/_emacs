@@ -41,7 +41,6 @@
 ;; predictable behaviour for guests
 (delete-selection-mode 1)
 
--not -regex '\./\..*'
 ;; ido
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
