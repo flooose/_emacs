@@ -172,7 +172,7 @@
 
 ;; windmove
 (windmove-default-keybindings) ;; default prefix is Meta
-(global-set-key (kbd "C-<")  'windmove-left)
+(global-set-key (kbd "C-<")  'speedbar-get-focus)
 (global-set-key (kbd "C-c <")  'windmove-left)
 (global-set-key (kbd "C->") 'windmove-right)
 (global-set-key (kbd "C-c >") 'windmove-right)
@@ -286,7 +286,8 @@
 (autoload 'ack-and-a-half-ack-here "ack-and-a-half" nil t)
 
 ;; speedbar
-;;(speedbar-add-supported-extension ".rb")
+(add-hook 'speedbar-load-hook
+             (lambda () (speedbar-add-supported-extension ".rb")))
 (setq speedbar-show-unknown-files t)
 (setq speedbar-use-images nil)
 
