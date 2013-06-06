@@ -25,6 +25,9 @@
 ;; colors
 (load-theme 'misterioso)
 
+;; make kill-line at beginning of line kill-whole-line
+(setq kill-whole-line t)
+
 ;; get tabs right
 (setq-default c-basic-indent 2)
 (setq-default tab-width 2)
@@ -40,6 +43,10 @@
 
 ;; predictable behaviour for guests
 (delete-selection-mode 1)
+
+;; projectile
+(projectile-global-mode)
+(global-set-key (kbd "C-c f")  'projectile-find-file)
 
 ;; ido
 (setq ido-enable-flex-matching t)
@@ -70,4 +77,7 @@
 (if (eq system-type 'darwin)
     (load-file "~/.emacs.d/config/mac-de.el"))
 
-;;
+;; enable auto-complete
+(require 'auto-complete)
+(add-to-list 'ac-modes 'ruby-mode)
+(global-auto-complete-mode t)
