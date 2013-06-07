@@ -1,12 +1,16 @@
 ;; No splash screen please... jeez
 (setq inhibit-startup-screen t)
 
-;;;; package.el
+;; package.el
 (require 'package)
 (setq package-user-dir "~/.emacs.d/elpa/")
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
+
+;; outsource customization
+(setq custom-file "~/.emacs.d/emacs-custom.el")
+(load custom-file)
 
 ;; get rid of temporary files
 (setq backup-directory-alist
