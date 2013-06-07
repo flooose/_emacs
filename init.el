@@ -85,3 +85,9 @@
 (require 'auto-complete)
 (add-to-list 'ac-modes 'ruby-mode)
 (global-auto-complete-mode t)
+
+;; Slime
+(eval-after-load 'slime
+  '(progn
+     (slime-setup '(slime-repl))))
+(setq inferior-lisp-program "clisp")
