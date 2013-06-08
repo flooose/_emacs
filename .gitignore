@@ -1,6 +1,3 @@
-*~
-*#
-ac-comphist.dat
-elpa/archives/gnu/archive-contents
-elpa/archives/marmalade/archive-contents
-tramp
+
+auto-save-list/
+projectile*
