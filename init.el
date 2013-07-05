@@ -18,6 +18,10 @@
 (setq auto-save-file-name-transforms
 			`((".*" ,temporary-file-directory t)))
 
+;; font size
+(set-face-attribute 'default nil :height 120 :font "Meslo LG S")
+
+
 ;; trailing white space goes away
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
