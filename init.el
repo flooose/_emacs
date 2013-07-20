@@ -99,6 +99,11 @@
      (slime-setup '(slime-repl))))
 (setq inferior-lisp-program "clisp")
 
+;;
+;; Everything from here forward should be in separate files
+;;
+(global-set-key (kbd "C-<")  'speedbar-get-focus)
+
 ;;;; figure out how to implement this.
 ;;(add-hook 'javascript-mode-hook
 ;;          '(lambda()
