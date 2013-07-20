@@ -1,6 +1,9 @@
 ;; No splash screen please... jeez
 (setq inhibit-startup-screen t)
 
+;; disable scroll bar
+(set-scroll-bar-mode nil)
+
 ;; package.el
 (require 'package)
 (setq package-user-dir "~/.emacs.d/elpa/")
