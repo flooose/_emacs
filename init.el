@@ -95,3 +95,9 @@
   '(progn
      (slime-setup '(slime-repl))))
 (setq inferior-lisp-program "clisp")
+
+;;;; figure out how to implement this.
+;;(add-hook 'javascript-mode-hook
+;;          '(lambda()
+;;            (load-file "~/.emacs.d/config/javascript-mode-config.el")))
+(load-file "~/.emacs.d/config/javascript-mode-config.el")
