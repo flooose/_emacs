@@ -102,10 +102,15 @@
 ;;
 ;; Everything from here forward should be in separate files
 ;;
-(global-set-key (kbd "C-<")  'speedbar-get-focus)
+;;(global-set-key (kbd "C-<")  'speedbar-get-focus)
 
 ;;;; figure out how to implement this.
 ;;(add-hook 'javascript-mode-hook
 ;;          '(lambda()
 ;;            (load-file "~/.emacs.d/config/javascript-mode-config.el")))
 (load-file "~/.emacs.d/config/javascript-mode-config.el")
+
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
