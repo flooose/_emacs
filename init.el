@@ -114,3 +114,9 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; window navigatioin
+(global-set-key (kbd "C-x M-j") 'windmove-down)
+(global-set-key (kbd "C-x M-k") 'windmove-up)
+(global-set-key (kbd "C-x M-h") 'windmove-left)
+(global-set-key (kbd "C-x M-l") 'windmove-right)
