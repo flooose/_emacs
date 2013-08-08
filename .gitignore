@@ -2,4 +2,5 @@
 auto-save-list/
 projectile*
 .mc-lists.el
-.ac-comphist.dat
+ac-comphist.dat
+
