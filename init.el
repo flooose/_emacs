@@ -37,7 +37,7 @@
 (setq column-number-mode t)
 
 ;; colors
-(load-theme 'misterioso)
+(load-theme 'tango-dark)
 
 ;; make kill-line at beginning of line kill-whole-line
 (setq kill-whole-line t)
