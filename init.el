@@ -68,6 +68,8 @@
 (add-hook 'css-mode-hook
           (load-file "~/.emacs.d/config/css-mode.el"))
 
+(add-hook 'eshell-mode-hook
+          (load-file "~/.emacs.d/config/eshell-mode.el"))
 
 ;; ido
 (setq ido-enable-flex-matching t)
