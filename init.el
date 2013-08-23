@@ -15,6 +15,9 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
+;; cursor to bar
+(setq-default cursor-type 'bar)
+
 ;; get rid of temporary files
 (setq backup-directory-alist
 			`((".*" . ,temporary-file-directory)))
