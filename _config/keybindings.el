@@ -5,3 +5,10 @@
 (global-set-key (kbd "C-x M-k") 'windmove-up)
 (global-set-key (kbd "C-x M-h") 'windmove-left)
 (global-set-key (kbd "C-x M-l") 'windmove-right)
+
+;; taken from http://emacsredux.com/blog/2013/05/30/joining-lines/
+(defun top-join-line ()
+  "Join the current line with the line beneath it."
+  (interactive)
+  (delete-indentation 1))
+(global-set-key (kbd "C-^") 'top-join-line)
