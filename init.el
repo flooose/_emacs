@@ -106,7 +106,10 @@
 (require 'auto-complete)
 (add-to-list 'ac-modes 'ruby-mode)
 (add-hook 'ruby-mode-hook
-          (lambda () (setq ruby-insert-encoding-magic-comment nil)))
+          (lambda ()
+            (setq ruby-insert-encoding-magic-comment nil)
+            (setq ruby-deep-arglist nil)
+            (setq ruby-deep-indent-paren nil)))
 
 (global-auto-complete-mode t)
 
