@@ -4,6 +4,9 @@
 ;; disable scroll bar
 (set-scroll-bar-mode nil)
 
+;; fix stupid gui functionality
+(global-set-key (kbd "C-z")  'undo)
+
 ;; package.el
 (require 'package)
 (setq package-user-dir "~/.emacs.d/elpa/")
@@ -25,8 +28,7 @@
 			`((".*" ,temporary-file-directory t)))
 
 ;; font size
-(set-face-attribute 'default nil :height 120 :font "Meslo LG S")
-
+(setq default-frame-alist '((font . "Meslo LG S")))
 
 ;; trailing white space goes away
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -103,6 +105,9 @@
 ;; enable auto-complete
 (require 'auto-complete)
 (add-to-list 'ac-modes 'ruby-mode)
+(add-hook 'ruby-mode-hook
+          (lambda () (setq ruby-insert-encoding-magic-comment nil)))
+
 (global-auto-complete-mode t)
 
 ;; Slime
