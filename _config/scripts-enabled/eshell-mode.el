@@ -1,0 +1,1 @@
+/home/chris/.emacs.d/config/scripts-available/eshell-mode.el
