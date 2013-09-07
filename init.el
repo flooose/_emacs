@@ -68,10 +68,10 @@
 (global-set-key (kbd "C-c 4 f")  'projectile-find-file-other-window)
 
 (add-hook 'css-mode-hook
-          (load-file "~/.emacs.d/config/css-mode.el"))
+          (load-file "~/.emacs.d/config/scripts-available/css-mode.el"))
 
 (add-hook 'eshell-mode-hook
-          (load-file "~/.emacs.d/config/eshell-mode.el"))
+          (load-file "~/.emacs.d/config/scripts-available/eshell-mode.el"))
 
 ;; ido
 (setq ido-enable-flex-matching t)
@@ -100,7 +100,7 @@
 
 ;; Set up mac
 (if (eq system-type 'darwin)
-    (load-file "~/.emacs.d/config/mac-de.el"))
+    (load-file "~/.emacs.d/config/scripts-available/mac-de.el"))
 
 ;; enable auto-complete
 (require 'auto-complete)
@@ -128,8 +128,9 @@
 ;;(add-hook 'javascript-mode-hook
 ;;          '(lambda()
 ;;            (load-file "~/.emacs.d/config/javascript-mode-config.el")))
-(load-file "~/.emacs.d/config/javascript-mode-config.el")
-(load-file "~/.emacs.d/config/keybindings.el")
+(load-file "~/.emacs.d/config/scripts-enabled/javascript-mode-config.el")
+(load-file "~/.emacs.d/config/scripts-enabled/keybindings.el")
+(load-file "~/.emacs.d/config/scripts-enabled/mindmatters-mercury.el")
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
