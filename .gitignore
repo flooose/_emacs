@@ -8,3 +8,4 @@ session.*
 tramp
 _config/scripts-available/mindmatters-mercury.el
 _config/scripts-enabled/*
+url
