@@ -15,3 +15,5 @@
   (interactive)
   (delete-indentation 1))
 (global-set-key (kbd "C-^") 'top-join-line)
+
+(global-set-key (kbd "C-M-g") 'vc-git-grep)

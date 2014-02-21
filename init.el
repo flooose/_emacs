@@ -134,6 +134,7 @@
 (load-file "~/.emacs.d/config/scripts-enabled/javascript-mode-config.el")
 (load-file "~/.emacs.d/config/scripts-enabled/keybindings.el")
 (load-file "~/.emacs.d/config/scripts-enabled/mindmatters-mercury.el")
+(load-file "~/.emacs.d/config/scripts-enabled/extensions.el")
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
