@@ -110,6 +110,9 @@
 (add-to-list 'ac-modes 'ruby-mode)
 (add-hook 'ruby-mode-hook
           (lambda ()
+            (ruby-electric-mode) ;; this breaks ruby-end-mode if it's not started first
+            (ruby-end-mode)
+            (ruby-tools-mode)
             (setq ruby-insert-encoding-magic-comment nil)
             (setq ruby-deep-arglist nil)
             (setq ruby-deep-indent-paren nil)))
