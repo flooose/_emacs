@@ -70,6 +70,10 @@
 (global-set-key (kbd "C-c 4 f")  'projectile-find-file-other-window)
 (global-set-key (kbd "C-c 5 f")  'projectile-find-file-other-frame)
 
+;; org-mode
+(add-hook 'org-mode-hook
+          (load-file "~/.emacs.d/config/scripts-enabled/org-mode.el"))
+
 (add-hook 'css-mode-hook
           (load-file "~/.emacs.d/config/scripts-available/css-mode.el"))
 
