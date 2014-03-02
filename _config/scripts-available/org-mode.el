@@ -5,6 +5,10 @@
 
 (setq org-directory "~/Spaces/org-mode")
 (setq org-default-notes-file (concat org-directory "/index.org"))
+
+(setq org-todo-keywords
+      '((sequence "TODO(t)" "BUY(b)" "|" "DONE(d)")))
+
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
      '(("t" "Todo" entry (file+headline (concat org-directory "/index.org") "Tasks")
