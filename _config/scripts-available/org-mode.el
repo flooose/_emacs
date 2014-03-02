@@ -7,10 +7,14 @@
 (setq org-default-notes-file (concat org-directory "/index.org"))
 (define-key global-map "\C-cc" 'org-capture)
 (setq org-capture-templates
-     '(("t" "Todo" entry (file+headline headline (concat org-directory "/index.org") "Tasks")
-             "* TODO %?\n  %i\n  %a")
+     '(("t" "Todo" entry (file+headline (concat org-directory "/index.org") "Tasks")
+        "* TODO %?\n  %i\n  %a")
        ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
-      "* %?\nEntered on %U\n  %i\n  %a")))
+      "* %?\nEntered on %U\n  %i\n  %a")
+       ("w" "Wortschatz" entry (file (concat org-directory "/vokab.org"))
+      "* %?\n")
+       ("s" "Shopping" entry (file (concat org-directory "/shopping.org"))
+      "* TODO %?\n  %i\n")))
 
 (setq org-agenda-files (list org-directory))
 
