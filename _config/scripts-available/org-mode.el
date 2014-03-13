@@ -20,7 +20,7 @@
        ("s" "Shopping" entry (file (concat org-directory "/shopping.org"))
       "* TODO %?\n  %i\n")))
 
-(setq org-agenda-files (list org-directory))
+(setq org-agenda-files (list org-directory "~/Documents/org"))
 
 ;; mobileorg
 (setq org-mobile-directory "/scpc:chris@flooose.no-ip.biz:public_html/org/")
