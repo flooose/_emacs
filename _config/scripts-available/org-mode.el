@@ -13,6 +13,8 @@
 (setq org-capture-templates
      '(("t" "Todo" entry (file+headline (concat org-directory "/index.org") "Tasks")
         "* TODO %?\n  %i\n  %a")
+       ("g" "Generic" entry (file (concat org-directory "/index.org"))
+        "* %?\n  %i\n  %a")
        ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
       "* %?\nEntered on %U\n  %i\n  %a")
        ("w" "Wortschatz" entry (file (concat org-directory "/vokab.org"))
