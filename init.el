@@ -8,13 +8,31 @@
 (global-set-key (kbd "C-z")  'undo)
 
 ;; package.el
+(require 'cl)
 (require 'package)
+(package-initialize)
+
+(setq packages '(auto-complete clojure-mode coffee-mode dash
+                 dockerfile-mode epl expand-region free-keys
+                 haml-mode jade-mode markdown-mode
+                 multiple-cursors nrepl nyan-mode projectile
+                 puppet-mode ruby-electric ruby-end ruby-tools
+                 sass-mode slime twittering-mode undo-tree
+                 yaml-mode))
+
+(setq missing-packages (remove-if 'package-installed-p packages))
+
 (setq package-user-dir "~/.emacs.d/elpa/")
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize)
+
+(if (> (length missing-packages) 0)
+    (progn (message "Installing missing packages")
+           (package-refresh-contents)
+           (dolist (package missing-packages)
+             (package-install package))))
 
 ;; outsource customization
 (setq custom-file "~/.emacs.d/emacs-custom.el")
