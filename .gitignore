@@ -10,3 +10,6 @@ _config/scripts-available/mindmatters-mercury.el
 _config/scripts-enabled/*
 url
 elpa/
+.org-id-locations
+bookmarks
+projectile.cache

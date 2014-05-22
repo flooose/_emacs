@@ -15,7 +15,7 @@
         "* TODO %?\n  %i\n  %a")
        ("g" "Generic" entry (file (concat org-directory "/index.org"))
         "* %?\n  %i\n  %a")
-       ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org"))
+       ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org.cpt"))
       "* %?\nEntered on %U\n  %i\n  %a")
        ("w" "Wortschatz" entry (file (concat org-directory "/vokab.org"))
       "* %?\n")
@@ -23,6 +23,18 @@
       "* TODO %?\n  %i\n")))
 
 (setq org-agenda-files (list org-directory "~/Documents/org"))
+
+;; Enable code blocks in org-mode for the following languages
+(let ((languages '((emacs-lisp . t)
+                   (ruby . t)
+                   (js . t)
+                   (css . t)
+                   (lisp . t)
+                   (sql . t)
+                   (sh . t))))
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   languages))
 
 ;; mobileorg
 (setq org-mobile-directory "/scpc:chris@192.168.1.200:public_html/org/")
