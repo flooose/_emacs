@@ -7,7 +7,7 @@
 (global-set-key (kbd "C-x M-l") 'windmove-right)
 
 ;; give speedbar forcus
-(global-set-key (kbd "M-s") 'speedbar-get-focus)
+;; (global-set-key (kbd "M-s") 'speedbar-get-focus)
 
 ;; taken from http://emacsredux.com/blog/2013/05/30/joining-lines/
 (defun top-join-line ()
