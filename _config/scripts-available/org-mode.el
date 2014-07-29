@@ -37,7 +37,7 @@
    languages))
 
 ;; mobileorg
-(setq org-mobile-directory "/scpc:chris@192.168.1.200:public_html/org/")
+(setq org-mobile-directory "/scpc:chris@flooose.no-ip.biz:public_html/org/")
 (setq org-mobile-keywords (list "shopping" "todo"))
 (setq org-mobile-inbox-for-pull (concat org-directory "/from-mobile.org"))
 (setq org-mobile-files (list
