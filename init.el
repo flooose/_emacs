@@ -125,15 +125,22 @@
 
 ;; Set up mac
 (if (eq system-type 'darwin)
-    (load-file "~/.emacs.d/config/scripts-available/mac-de.el"))
+    (load-file "~/.emacs.d/config/scripts-enabled/mac-de.el"))
 
 ;; enable auto-complete
 (require 'auto-complete)
 (add-to-list 'ac-modes 'ruby-mode)
 (add-hook 'ruby-mode-hook
           (lambda ()
-            (ruby-electric-mode) ;; this breaks ruby-end-mode if it's not started first
-            (ruby-end-mode)
+            ;; Needed for ruby-electric-mode see
+            ;; http://stackoverflow.com/questions/10326255/emacs-ruby-electric-does-not-insert-end
+            ;; for context, although it is not properly solved there
+            (defun ruby-insert-end ()
+              (interactive)
+              (insert "end")
+              (ruby-indent-line t)
+              (end-of-line))
+            (ruby-electric-mode)
             (ruby-tools-mode)
             (setq ruby-insert-encoding-magic-comment nil)
             (setq ruby-deep-arglist nil)
