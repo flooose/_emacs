@@ -17,3 +17,17 @@
 (global-set-key (kbd "C-^") 'top-join-line)
 
 (global-set-key (kbd "C-M-g") 'vc-git-grep)
+
+;; String manipulation
+(global-set-key (kbd "C-'") 'toggle-quotes)
+
+;; Zap-to-char backwards
+(global-set-key (kbd "M-Z") (lambda ()
+                                (interactive (zap-to-char -1 (read-char "Zap back to char: " t)))))
+
+;; Dot-mode
+(autoload 'dot-mode "dot-mode" nil t) ; vi `.' command emulation
+(global-set-key [(control ?.)] (lambda () (interactive) (dot-mode 1)
+                                 (message "Dot mode activated.")))
+(require 'dot-mode)
+(add-hook 'find-file-hooks 'dot-mode-on)

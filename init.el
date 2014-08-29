@@ -16,9 +16,9 @@
                  dockerfile-mode epl expand-region free-keys
                  haml-mode jade-mode markdown-mode
                  multiple-cursors nrepl nyan-mode projectile
-                 puppet-mode ruby-electric ruby-end ruby-tools
-                 sass-mode slime twittering-mode undo-tree
-                 yaml-mode))
+                 puppet-mode ruby-electric flymake-ruby ruby-end
+                 ruby-tools sass-mode slime twittering-mode
+                 undo-tree yaml-mode toggle-quotes dot-mode))
 
 (setq missing-packages (remove-if 'package-installed-p packages))
 
@@ -142,6 +142,7 @@
               (end-of-line))
             (ruby-electric-mode)
             (ruby-tools-mode)
+            (flymake-ruby-load)
             (setq ruby-insert-encoding-magic-comment nil)
             (setq ruby-deep-arglist nil)
             (setq ruby-deep-indent-paren nil)))
