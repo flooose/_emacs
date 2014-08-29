@@ -6,8 +6,10 @@
 (global-set-key (kbd "C-x M-h") 'windmove-left)
 (global-set-key (kbd "C-x M-l") 'windmove-right)
 
-;; give speedbar forcus
-;; (global-set-key (kbd "M-s") 'speedbar-get-focus)
+;; make brackets easier
+(global-set-key (kbd "M-[") 'insert-pair)
+(global-set-key (kbd "M-{") 'insert-pair)
+(global-set-key (kbd "M-\"") 'insert-pair)
 
 ;; taken from http://emacsredux.com/blog/2013/05/30/joining-lines/
 (defun top-join-line ()

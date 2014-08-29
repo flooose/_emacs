@@ -12,13 +12,37 @@
 (require 'package)
 (package-initialize)
 
-(setq packages '(auto-complete clojure-mode coffee-mode dash
-                 dockerfile-mode epl expand-region free-keys
-                 haml-mode jade-mode markdown-mode
-                 multiple-cursors nrepl nyan-mode projectile
-                 puppet-mode ruby-electric flymake-ruby ruby-end
-                 ruby-tools sass-mode slime twittering-mode
-                 undo-tree yaml-mode toggle-quotes dot-mode))
+(setq packages '(auto-complete
+                 clojure-mode
+                 coffee-mode
+                 dash
+                 dockerfile-mode
+                 dot-mode
+                 epl
+                 expand-region
+                 flymake-coffee
+                 flymake-haml
+                 flymake-jslint
+                 flymake-ruby
+                 free-keys
+                 haml-mode
+                 jade-mode
+                 markdown-mode
+                 multiple-cursors
+                 nrepl
+                 nyan-mode
+                 projectile
+                 puppet-mode
+                 ruby-electric
+                 ruby-end
+                 ruby-tools
+                 sass-mode
+                 slime
+                 toggle-quotes
+                 twittering-mode
+                 undo-tree
+                 yaml-mode
+                 yasnippet))
 
 (setq missing-packages (remove-if 'package-installed-p packages))
 
