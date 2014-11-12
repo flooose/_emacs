@@ -4,6 +4,9 @@
 ;; disable scroll bar
 (set-scroll-bar-mode nil)
 
+;; recursive minibuffers
+(setq enable-recursive-minibuffers t)
+
 ;; fix stupid gui functionality
 (global-set-key (kbd "C-z")  'undo)
 
