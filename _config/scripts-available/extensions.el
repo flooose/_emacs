@@ -33,12 +33,11 @@
   (interactive)
   (end-of-line)
   (newline-and-indent))
-(global-set-key (kbd "C-o") 'flooose-open-line)
+(global-set-key (kbd "C-<return>") 'flooose-open-line)
 
 (defun flooose-open-line-above ()
   "Open line above and got to it"
   (interactive)
   (previous-line)
-  (flooose-open-line)
-  )
-(global-set-key (kbd "C-S-o") 'flooose-open-line-above)
+  (flooose-open-line))
+(global-set-key (kbd "C-S-<return>") 'flooose-open-line-above)
