@@ -47,6 +47,10 @@
                  yaml-mode
                  yasnippet))
 
+(yas-global-mode 1)
+(add-hook 'term-mode-hook (lambda()
+        (setq yas-dont-activate t)))
+
 (setq missing-packages (remove-if 'package-installed-p packages))
 
 (setq package-user-dir "~/.emacs.d/elpa/")
