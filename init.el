@@ -75,6 +75,7 @@
 (setq-default cursor-type 'bar)
 
 ;; get rid of temporary files
+(setq create-lockfiles nil)
 (setq backup-directory-alist
 			`((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
