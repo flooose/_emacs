@@ -30,12 +30,14 @@
                  free-keys
                  haml-mode
                  jade-mode
+                 js3-mode
                  markdown-mode
                  multiple-cursors
                  nrepl
                  nyan-mode
                  projectile
                  puppet-mode
+                 rspec-mode
                  ruby-electric
                  ruby-end
                  ruby-tools
@@ -160,7 +162,22 @@
 
 ;; enable auto-complete
 (require 'auto-complete)
-(add-to-list 'ac-modes 'ruby-mode)
+(setq flooose-modes '(coffee-mode
+                      dockerfile-mode
+                      haml-mode
+                      jade-mode
+                      js3-mode
+                      markdown-mode
+                      puppet-mode
+                      rspec-mode
+                      ruby-mode
+                      sass-mode
+                      yaml-mode))
+
+(dolist (mode flooose-modes)
+  (add-to-list 'ac-modes mode))
+(global-auto-complete-mode t)
+
 (add-hook 'ruby-mode-hook
           (lambda ()
             ;; Needed for ruby-electric-mode see
