@@ -196,7 +196,8 @@
             (setq ruby-deep-arglist nil)
             (setq ruby-deep-indent-paren nil)))
 
-(global-auto-complete-mode t)
+(add-hook 'coffee-mode-hook 'flymake-coffee-load)
+(add-hook 'js3-mode-hook 'flymake-jslint-load)
 
 ;; Slime
 (eval-after-load 'slime
