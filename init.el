@@ -122,6 +122,10 @@
 (global-set-key (kbd "C-c 4 f")  'projectile-find-file-other-window)
 (global-set-key (kbd "C-c 5 f")  'projectile-find-file-other-frame)
 
+;; twittering-mode-hook
+(add-hook 'twittering-mode-hook
+          (lambda () (setq twittering-use-master-password t)))
+
 ;; org-mode
 (add-hook 'org-mode-hook
           (load-file "~/.emacs.d/config/scripts-enabled/org-mode.el"))
@@ -216,8 +220,8 @@
 ;;            (load-file "~/.emacs.d/config/javascript-mode-config.el")))
 (load-file "~/.emacs.d/config/scripts-enabled/javascript-mode-config.el")
 (load-file "~/.emacs.d/config/scripts-enabled/keybindings.el")
-(load-file "~/.emacs.d/config/scripts-enabled/mindmatters-mercury.el")
-(load-file "~/.emacs.d/config/scripts-enabled/extensions.el")
+;;(load-file "~/.emacs.d/config/scripts-enabled/mindmatters-mercury.el")
+;;(load-file "~/.emacs.d/config/scripts-enabled/extensions.el")
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -227,6 +231,12 @@
 ;; make working with strings easier
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"))                 ;; personal snippets
+(require 'yasnippet)
+(yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
 
 ;; vi-like browsing in view mode
 (add-hook 'view-mode-hook

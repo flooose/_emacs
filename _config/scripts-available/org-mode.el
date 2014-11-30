@@ -1,7 +1,7 @@
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key (kbd "C-, l") 'org-store-link)
+(global-set-key (kbd "C-, c") 'org-capture)
+(global-set-key (kbd "C-, a") 'org-agenda)
+(global-set-key (kbd "C-, b") 'org-iswitchb)
 
 (setq org-directory "~/Spaces/org-mode")
 (setq org-default-notes-file (concat org-directory "/index.org"))
@@ -9,14 +9,16 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "BUY(b)" "|" "DONE(d)")))
 
-(define-key global-map "\C-cc" 'org-capture)
+(define-key global-map (kbd "C-, c") 'org-capture)
 (setq org-capture-templates
      '(("t" "Todo" entry (file+headline (concat org-directory "/index.org") "Tasks")
         "* TODO %?\n  %i\n  %a")
        ("g" "Generic" entry (file (concat org-directory "/index.org"))
         "* %?\n  %i\n  %a")
        ("j" "Journal" entry (file+datetree (concat org-directory "/journal.org.cpt"))
-      "* %?\nEntered on %U\n  %i\n  %a")
+      "* %?\n\n\tEntered on %U\n  %i\n  %a")
+       ("l" "Language" entry (file+datetree (concat org-directory "/language.org"))
+      "* %?\nEntered on %U\n\n\t%i\n  %a")
        ("w" "Wortschatz" entry (file (concat org-directory "/vokab.org"))
       "* %?\n")
        ("s" "Shopping" entry (file (concat org-directory "/shopping.org"))

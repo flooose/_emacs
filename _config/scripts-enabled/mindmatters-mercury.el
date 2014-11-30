@@ -1,1 +1,0 @@
-/home/chris/.emacs.d/config/scripts-available/mindmatters-mercury.el
