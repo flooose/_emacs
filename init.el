@@ -38,7 +38,7 @@
                  projectile
                  puppet-mode
                  rspec-mode
-                 ruby-electric
+                 ;ruby-electric
                  ruby-end
                  ruby-tools
                  sass-mode
@@ -46,6 +46,7 @@
                  toggle-quotes
                  twittering-mode
                  undo-tree
+                 wrap-region
                  yaml-mode
                  yasnippet))
 
@@ -189,7 +190,7 @@
               (insert "end")
               (ruby-indent-line t)
               (end-of-line))
-            (ruby-electric-mode)
+            ;(ruby-electric-mode)
             (ruby-tools-mode)
             (flymake-ruby-load)
             (setq ruby-insert-encoding-magic-comment nil)
@@ -227,6 +228,7 @@
 ;; make working with strings easier
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+(wrap-region-global-mode t)
 
 ;; vi-like browsing in view mode
 (add-hook 'view-mode-hook
