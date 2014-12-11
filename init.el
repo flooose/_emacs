@@ -7,9 +7,6 @@
 ;; recursive minibuffers
 (setq enable-recursive-minibuffers t)
 
-;; fix stupid gui functionality
-(global-set-key (kbd "C-z")  'undo)
-
 ;; package.el
 (require 'cl)
 (require 'package)
@@ -68,7 +65,7 @@
            (dolist (package missing-packages)
              (package-install package))))
 
-;; outsource customization
+;; outsource auto-generated emacs customization
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 
@@ -200,31 +197,28 @@
      (slime-setup '(slime-repl))))
 (setq inferior-lisp-program "clisp")
 
+;; do what people expect when regions are active
+(wrap-region-global-mode t)
+
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"))                 ;; personal snippets
+(require 'yasnippet)
+(yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
+
 ;;
 ;; Everything from here forward should be in separate files
 ;;
-;;(global-set-key (kbd "C-<")  'speedbar-get-focus)
-
-;;;; figure out how to implement this.
-;;(add-hook 'javascript-mode-hook
-;;          '(lambda()
-;;            (load-file "~/.emacs.d/config/javascript-mode-config.el")))
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
+;; fix stupid gui functionality
+(global-set-key (kbd "C-z")  'undo)
+
 ;; make working with strings easier
-(require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
-(wrap-region-global-mode t)
-
-
-(setq yas-snippet-dirs
-      '("~/.emacs.d/snippets"))                 ;; personal snippets
-(require 'yasnippet)
-(yas-global-mode 1) ;; or M-x yas-reload-all if you've started YASnippet already.
 
 ;; vi-like browsing in view mode
 (add-hook 'view-mode-hook
