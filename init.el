@@ -127,15 +127,9 @@
 (add-hook 'twittering-mode-hook
           (lambda () (setq twittering-use-master-password t)))
 
-;; org-mode
-(add-hook 'org-mode-hook
-          (load-file "~/.emacs.d/config/scripts-enabled/org-mode.el"))
-
-(add-hook 'css-mode-hook
-          (load-file "~/.emacs.d/config/scripts-enabled/css-mode.el"))
-
-(add-hook 'eshell-mode-hook
-          (load-file "~/.emacs.d/config/scripts-enabled/eshell-mode.el"))
+;; load enabled scripts
+(dolist (item (nthcdr 2 (directory-files "~/.emacs.d/_config/scripts-enabled/" t)))
+  (load-file item))
 
 ;; ido
 (setq ido-enable-flex-matching t)
@@ -161,10 +155,6 @@
 ;; ccrypt integration
 ;;
 (require 'ps-ccrypt "~/.emacs.d/modes/ps-ccrypt.el")
-
-;; Set up mac
-(if (eq system-type 'darwin)
-    (load-file "~/.emacs.d/config/scripts-enabled/mac-de.el"))
 
 ;; enable auto-complete
 (require 'auto-complete)
@@ -219,10 +209,6 @@
 ;;(add-hook 'javascript-mode-hook
 ;;          '(lambda()
 ;;            (load-file "~/.emacs.d/config/javascript-mode-config.el")))
-(load-file "~/.emacs.d/config/scripts-enabled/javascript-mode-config.el")
-(load-file "~/.emacs.d/config/scripts-enabled/keybindings.el")
-;;(load-file "~/.emacs.d/config/scripts-enabled/mindmatters-mercury.el")
-;;(load-file "~/.emacs.d/config/scripts-enabled/extensions.el")
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
