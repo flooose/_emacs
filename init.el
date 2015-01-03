@@ -13,6 +13,7 @@
 (package-initialize)
 
 (setq packages '(auto-complete
+                 cider
                  clojure-mode
                  coffee-mode
                  dash
