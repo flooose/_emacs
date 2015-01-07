@@ -33,3 +33,6 @@
                                  (message "Dot mode activated.")))
 (require 'dot-mode)
 (add-hook 'find-file-hooks 'dot-mode-on)
+
+;; rgrep
+(global-set-key (kbd "C-, g") 'rgrep)
