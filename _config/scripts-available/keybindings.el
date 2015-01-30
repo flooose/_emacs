@@ -36,3 +36,10 @@
 
 ;; rgrep
 (global-set-key (kbd "C-, g") 'rgrep)
+(global-set-key (kbd "C-, w") (lambda () (interactive)
+                                  (save-excursion
+                                    (back-to-indentation)
+                                    (set-mark-command nil)
+                                    (move-end-of-line nil)
+                                    (kill-ring-save 'doesnt-matter-because 'of-next-argument t)
+                                    )))
