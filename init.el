@@ -29,6 +29,7 @@
                  haml-mode
                  jade-mode
                  js3-mode
+                 magit
                  markdown-mode
                  multiple-cursors
                  nyan-mode
