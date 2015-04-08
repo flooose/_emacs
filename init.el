@@ -13,6 +13,7 @@
 (package-initialize)
 
 (setq packages '(auto-complete
+                 ace-window
                  cider
                  clojure-mode
                  coffee-mode
@@ -228,3 +229,7 @@
           (lambda()
             (local-set-key (kbd "j") 'next-line)
             (local-set-key (kbd "k") 'previous-line)))
+
+(global-set-key (kbd "C-x o") 'ace-window)
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+(setq aw-scope 'frame)
