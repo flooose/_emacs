@@ -43,3 +43,4 @@
                                     (move-end-of-line nil)
                                     (kill-ring-save 'doesnt-matter-because 'of-next-argument t)
                                     )))
+(global-set-key (kbd "C-<tab>") 'auto-complete)
