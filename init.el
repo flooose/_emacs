@@ -32,6 +32,7 @@
                  js3-mode
                  magit
                  markdown-mode
+                 monokai-theme
                  multiple-cursors
                  nyan-mode
                  projectile
@@ -95,7 +96,7 @@
 (setq column-number-mode t)
 
 ;; colors
-(load-theme 'tango-dark)
+(load-theme 'monokai)
 
 ;; make kill-line at beginning of line kill-whole-line
 (setq kill-whole-line t)
