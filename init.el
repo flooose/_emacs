@@ -28,6 +28,7 @@
                  flymake-ruby
                  free-keys
                  haml-mode
+                 inf-ruby
                  jade-mode
                  js3-mode
                  magit
@@ -176,6 +177,12 @@
   (add-to-list 'ac-modes mode))
 (global-auto-complete-mode t)
 
+;; See https://github.com/pezra/rspec-mode about why this is here
+(add-hook 'after-init-hook 'inf-ruby-switch-setup)
+
+(setenv "PATH" (concat (getenv "PATH") ":~/.rbenv/shims"))
+(setq rspec-use-rake-when-possible nil)
+
 (add-hook 'ruby-mode-hook
           (lambda ()
             ;; Needed for ruby-electric-mode see
@@ -191,10 +198,13 @@
             (flymake-ruby-load)
             (setq ruby-insert-encoding-magic-comment nil)
             (setq ruby-deep-arglist nil)
-            (setq ruby-deep-indent-paren nil)))
+            (setq ruby-deep-indent-paren nil)
+            (local-set-key (kbd "C-, r") 'rspec-verify-single)
+            (local-set-key (kbd "C-, R") 'rspec-verify)))
 
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 (add-hook 'js3-mode-hook 'flymake-jslint-load)
+(global-set-key (kbd "C-, f") 'flymake-popup-current-error-menu)
 
 ;; Slime
 (eval-after-load 'slime
