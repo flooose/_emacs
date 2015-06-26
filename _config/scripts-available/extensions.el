@@ -1,3 +1,56 @@
+(defun flooose-scan-line-for-string-forward ()
+  (save-excursion
+    (if (in-string-p)
+        (while (in-string-p)
+          (forward-char)))
+    (while (not (or (in-string-p) (eolp)))
+      (forward-char))
+    (if (eolp)
+        nil
+      (point))))
+
+(defun flooose-scan-line-for-string-backward ()
+  (save-excursion
+    (if (in-string-p)
+        (while (in-string-p)
+          (backward-char)))
+    (while (not (or (in-string-p) (bolp)))
+      (backward-char))
+    (if (eolp)
+        nil
+      (point))))
+
+(defun flooose-next-string-in-line (arg)
+  (interactive "p")
+  (if (> arg 1)
+      (flooose-next-string-in-line (- arg 1)))
+  (let ((point-in-next-string (flooose-scan-line-for-string-forward)))
+    (if point-in-next-string
+        (goto-char point-in-next-string))))
+
+(defun flooose-previous-string-in-line (arg)
+  (interactive "p")
+  (if (> arg 1)
+      (flooose-previous-string-in-line (- arg 1)))
+  (let ((point-in-previous-string (flooose-scan-line-for-string-backward)))
+    (if point-in-previous-string
+        (goto-char point-in-previous-string))))
+
+(global-set-key (kbd "C-, j") 'flooose-next-string-in-line)
+(global-set-key (kbd "C-, J") 'flooose-previous-string-in-line)
+
+(defun flooose-backward-up-list (arg)
+  (interactive "p")
+  (if (in-string-p)
+      (progn
+        (while (in-string-p)
+          (backward-char))
+        (if (> arg 1)
+            (backward-up-list (- arg 1))))
+    (backward-up-list arg)))
+(global-set-key (kbd "C-M-u") 'flooose-backward-up-list)
+
+
 (defun search-and-calculate-for (fun)
   "searches for occurence of next integer and performs given action on it"
   (save-excursion
@@ -43,3 +96,7 @@
   (flooose-open-line))
 (global-set-key (kbd "C-S-<return>") 'flooose-open-line-above)
 (global-set-key (kbd "C-S-o") 'flooose-open-line-above)
+
+(define-key global-map
+  [menu-bar file flupp]
+  '("Fuzzy-find File" . projectile-find-file))
