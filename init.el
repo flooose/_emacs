@@ -36,6 +36,7 @@
                  monokai-theme
                  multiple-cursors
                  nyan-mode
+                 polymode
                  projectile
                  puppet-mode
                  rspec-mode
@@ -246,3 +247,7 @@
 (setq aw-scope 'frame)
 
 (electric-indent-mode nil)
+
+(require 'poly-R)
+(require 'poly-markdown)
+(add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
