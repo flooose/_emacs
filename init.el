@@ -43,6 +43,7 @@
                  polymode
                  projectile
                  puppet-mode
+                 robe
                  rspec-mode
                  ;ruby-electric
                  ruby-end
@@ -202,6 +203,7 @@
               (end-of-line))
             ;(ruby-electric-mode)
             (ruby-tools-mode)
+            (robe)
             (flymake-ruby-load)
             (setq ruby-insert-encoding-magic-comment nil)
             (setq ruby-deep-arglist nil)
