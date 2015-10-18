@@ -3,7 +3,7 @@
 (global-set-key (kbd "C-, a") 'org-agenda)
 (global-set-key (kbd "C-, b") 'org-iswitchb)
 
-(setq org-directory "~/Spaces/org-mode")
+(setq org-directory "~/Documents/org-mode")
 (setq org-default-notes-file (concat org-directory "/index.org"))
 
 (setq org-todo-keywords
