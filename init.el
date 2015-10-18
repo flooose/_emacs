@@ -10,6 +10,9 @@
 ;; package.el
 (require 'cl)
 (require 'package)
+
+(add-hook 'after-init-hook 'global-company-mode)
+
 (package-initialize)
 
 (setq packages '(auto-complete
@@ -17,6 +20,7 @@
                  cider
                  clojure-mode
                  coffee-mode
+                 company
                  dash
                  dockerfile-mode
                  dot-mode
@@ -160,26 +164,28 @@
 ;;
 (require 'ps-ccrypt "~/.emacs.d/modes/ps-ccrypt.el")
 
-;; enable auto-complete
-(require 'auto-complete)
-(setq flooose-modes '(coffee-mode
-                      dockerfile-mode
-                      haml-mode
-                      jade-mode
-                      js3-mode
-                      markdown-mode
-                      puppet-mode
-                      rspec-mode
-                      ruby-mode
-                      sass-mode
-                      yaml-mode))
+;; ;; enable auto-complete
+;; (require 'auto-complete)
+;; (setq flooose-modes '(coffee-mode
+;;                       dockerfile-mode
+;;                       haml-mode
+;;                       jade-mode
+;;                       js3-mode
+;;                       markdown-mode
+;;                       puppet-mode
+;;                       rspec-mode
+;;                       ruby-mode
+;;                       sass-mode
+;;                       yaml-mode))
 
-(dolist (mode flooose-modes)
-  (add-to-list 'ac-modes mode))
-(global-auto-complete-mode t)
+;; (dolist (mode flooose-modes)
+;;   (add-to-list 'ac-modes mode))
+;; (global-auto-complete-mode t)
 
 ;; See https://github.com/pezra/rspec-mode about why this is here
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
 
 (setenv "PATH" (concat (getenv "PATH") ":~/.rbenv/shims"))
 (setq rspec-use-rake-when-possible nil)
