@@ -92,8 +92,9 @@
 (defun flooose-open-line-above ()
   "Open line above and got to it"
   (interactive)
-  (previous-line)
-  (flooose-open-line))
+  (beginning-of-line)
+  (newline)
+  (previous-line))
 (global-set-key (kbd "C-S-<return>") 'flooose-open-line-above)
 (global-set-key (kbd "C-S-o") 'flooose-open-line-above)
 
