@@ -37,6 +37,7 @@
                  inf-ruby
                  jade-mode
                  js3-mode
+                 jsx-mode
                  magit
                  markdown-mode
                  monokai-theme
@@ -205,7 +206,7 @@
               (end-of-line))
             ;(ruby-electric-mode)
             (ruby-tools-mode)
-            (robe)
+            (robe-mode)
             (flymake-ruby-load)
             (setq ruby-insert-encoding-magic-comment nil)
             (setq ruby-deep-arglist nil)
@@ -214,8 +215,9 @@
             (local-set-key (kbd "C-, R") 'rspec-verify)))
 
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
-(add-hook 'js3-mode-hook 'flymake-jslint-load)
-(global-set-key (kbd "C-, f") 'flymake-popup-current-error-menu)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(setq flymake-jslint-command "eslint")
+(add-hook 'js2-mode-hook 'flymake-jslint-load)
 
 ;; Slime
 (eval-after-load 'slime
@@ -261,3 +263,8 @@
 (require 'poly-R)
 (require 'poly-markdown)
 (add-to-list 'auto-mode-alist '("\\.Rmd" . poly-markdown+r-mode))
+
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
+(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+
+(ansi-term "/usr/bin/bash")
