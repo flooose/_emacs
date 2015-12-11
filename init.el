@@ -25,6 +25,8 @@
                  dockerfile-mode
                  dot-mode
                  epl
+                 ess
+                 eww
                  expand-region
                  flymake-coffee
                  flymake-haml
