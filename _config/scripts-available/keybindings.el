@@ -44,3 +44,8 @@
                                     (kill-ring-save 'doesnt-matter-because 'of-next-argument t)
                                     )))
 (global-set-key (kbd "C-<tab>") 'auto-complete)
+
+;; Don't accidentally close emacs
+(global-set-key (kbd "C-x C-c") (lambda () (interactive)
+                                  (message "Not quitting emacs. Use C-x C-q instead.")))
+(global-set-key (kbd "C-x C-q") 'save-buffers-kill-terminal)
