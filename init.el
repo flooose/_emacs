@@ -69,11 +69,13 @@
 
 ;; This breaks if there is no network
 ;; see https://github.com/bodil/emacs.d/blob/master/init.el#L52 for a possible fix
-(if (> (length missing-packages) 0)
-    (progn (message "Installing missing packages")
-           (package-refresh-contents)
-           (dolist (package missing-packages)
-             (package-install package))))
+(defun flooose-install-packages ()
+    (if (> (length missing-packages) 0)
+        (progn (message "Installing missing packages")
+               (package-refresh-contents)
+               (dolist (package missing-packages)
+                 (package-install package)))))
+(flooose-install-packages)
 
 (yas-global-mode 1)
 (add-hook 'term-mode-hook (lambda()
