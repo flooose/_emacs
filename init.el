@@ -15,8 +15,7 @@
 
 (package-initialize)
 
-(setq packages '(auto-complete
-                 ace-window
+(setq packages '(ace-window
                  cider
                  clojure-mode
                  coffee-mode
@@ -168,26 +167,9 @@
 ;;
 (require 'ps-ccrypt "~/.emacs.d/modes/ps-ccrypt.el")
 
-;; ;; enable auto-complete
-;; (require 'auto-complete)
-;; (setq flooose-modes '(coffee-mode
-;;                       dockerfile-mode
-;;                       haml-mode
-;;                       jade-mode
-;;                       js3-mode
-;;                       markdown-mode
-;;                       puppet-mode
-;;                       rspec-mode
-;;                       ruby-mode
-;;                       sass-mode
-;;                       yaml-mode))
-
-;; (dolist (mode flooose-modes)
-;;   (add-to-list 'ac-modes mode))
-;; (global-auto-complete-mode t)
-
 ;; See https://github.com/pezra/rspec-mode about why this is here
 (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 (eval-after-load 'company
   '(push 'company-robe company-backends))
 
