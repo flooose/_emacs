@@ -4,6 +4,9 @@
 ;; disable scroll bar
 (set-scroll-bar-mode nil)
 
+;; we don't always want to do this manually
+(toggle-frame-maximized)
+
 ;; recursive minibuffers
 (setq enable-recursive-minibuffers t)
 
@@ -250,5 +253,9 @@
 
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+
+(cd (or
+     (getenv "CURRENT_PROJECT")
+     (getenv "HOME")))
 
 (ansi-term "/usr/bin/bash")
