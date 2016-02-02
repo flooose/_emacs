@@ -38,8 +38,7 @@
                  haml-mode
                  inf-ruby
                  jade-mode
-                 js3-mode
-                 jsx-mode
+                 js2-mode
                  magit
                  markdown-mode
                  monokai-theme
@@ -202,9 +201,15 @@
             (local-set-key (kbd "C-, R") 'rspec-verify)))
 
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
 (setq flymake-jslint-command "eslint")
 (add-hook 'js2-mode-hook 'flymake-jslint-load)
+(add-hook 'web-mode-hook
+          (lambda ()
+            (if (or (equal web-mode-content-type "jsx") (equal web-mode-content-type "javascript"))
+                (flymake-jslint-load))))
+
+
 
 ;; Slime
 (eval-after-load 'slime
@@ -259,3 +264,28 @@
      (getenv "HOME")))
 
 (ansi-term "/usr/bin/bash")
+
+
+
+
+
+
+
+(global-set-key (kbd "C-, f") 'projectile-find-file)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+
+(add-hook 'web-mode-hook
+  (lambda ()
+  (if (equal web-mode-content-type "javascript")
+  (web-mode-set-content-type "jsx")
+  (message "now set to: %s" web-mode-content-type))))
