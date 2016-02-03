@@ -30,6 +30,7 @@
                  ess
                  eww
                  expand-region
+                 flycheck
                  flymake-coffee
                  flymake-haml
                  flymake-jslint
@@ -280,12 +281,23 @@
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
 
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
-
 (add-hook 'web-mode-hook
-  (lambda ()
-  (if (equal web-mode-content-type "javascript")
-  (web-mode-set-content-type "jsx")
-  (message "now set to: %s" web-mode-content-type))))
+          (lambda ()
+            ;; short circuit js mode and just do everything in jsx-mode
+            (if (equal web-mode-content-type "javascript")
+                (web-mode-set-content-type "jsx")
+              (message "now set to: %s" web-mode-content-type))
+
+            (setq web-mode-markup-indent-offset 2)
+            (setq web-mode-css-indent-offset 2)
+            (setq web-mode-code-indent-offset 2)))
+
+;; global npm dependencies: eslint, babel-eslint, eslint-plugin-react
+;; run `sudo npm install eslint babel-eslint, eslint-plugin-react -g`
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+(setq-default flycheck-disabled-checkers
+            (append flycheck-disabled-checkers
+                    '(json-jsonlist)))
