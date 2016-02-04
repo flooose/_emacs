@@ -7,8 +7,9 @@
  '(company-dabbrev-downcase nil)
  '(custom-safe-themes
    (quote
-    ("196cc00960232cfc7e74f4e95a94a5977cb16fd28ba7282195338f68c84058ec" "a041a61c0387c57bb65150f002862ebcfe41135a3e3425268de24200b82d6ec9" "08851585c86abcf44bb1232bced2ae13bc9f6323aeda71adfa3791d6e7fea2b6" default)))
+    ("38ba6a938d67a452aeb1dada9d7cdeca4d9f18114e9fc8ed2b972573138d4664" "196cc00960232cfc7e74f4e95a94a5977cb16fd28ba7282195338f68c84058ec" "a041a61c0387c57bb65150f002862ebcfe41135a3e3425268de24200b82d6ec9" "08851585c86abcf44bb1232bced2ae13bc9f6323aeda71adfa3791d6e7fea2b6" default)))
  '(js2-basic-offset 2)
+ '(js2-strict-missing-semi-warning nil)
  '(js3-consistent-level-indent-inner-bracket t)
  '(jsx-indent-level 2)
  '(magit-use-overlays nil)
@@ -25,6 +26,7 @@
  '(polymode-exporter-output-file-format "%s")
  '(polymode-weave-output-file-format "%s")
  '(safe-local-variable-values (quote ((ft . ruby))))
+ '(term-buffer-maximum-size 0)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

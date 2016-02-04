@@ -58,6 +58,7 @@
                  toggle-quotes
                  twittering-mode
                  undo-tree
+                 web-mode
                  wrap-region
                  yaml-mode
                  yasnippet))
@@ -294,6 +295,7 @@
 
 ;; global npm dependencies: eslint, babel-eslint, eslint-plugin-react
 ;; run `sudo npm install eslint babel-eslint, eslint-plugin-react -g`
+(require 'flycheck)
 (flycheck-add-mode 'javascript-eslint 'web-mode)
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
@@ -301,3 +303,5 @@
 (setq-default flycheck-disabled-checkers
             (append flycheck-disabled-checkers
                     '(json-jsonlist)))
+
+(add-to-list 'grep-find-ignored-directories "node_modules")
