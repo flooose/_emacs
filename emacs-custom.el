@@ -13,7 +13,7 @@
  '(js3-consistent-level-indent-inner-bracket t)
  '(jsx-indent-level 2)
  '(magit-use-overlays nil)
- '(menu-bar-mode t)
+ '(menu-bar-mode nil)
  '(org-agenda-files
    (quote
     ("/scp:192.168.1.200:/home/chris/public_html/org/mobileorg.org"
