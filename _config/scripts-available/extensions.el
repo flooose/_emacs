@@ -101,3 +101,8 @@
 (define-key global-map
   [menu-bar file flupp]
   '("Fuzzy-find File" . projectile-find-file))
+
+(defun node-repl ()
+  (interactive)
+  (setenv "NODE_NO_READLINE" "1")
+  (pop-to-buffer (make-comint "node-repl" "node" nil "--interactive")))
