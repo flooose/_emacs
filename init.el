@@ -135,6 +135,10 @@
 ;; projectile
 (projectile-global-mode)
 (global-set-key (kbd "C-c f")  'projectile-find-file)
+(global-set-key (kbd "C-, f") 'projectile-find-file)
+(global-set-key (kbd "C-, 4 f") 'projectile-find-file-other-window)
+(global-set-key (kbd "C-, 5 f") 'projectile-find-file-other-frame)
+(global-set-key (kbd "C-c C-f")  'projectile-find-file)
 (add-hook 'projectile-mode-hook
           (lambda () (load-file "~/.emacs.d/patches/projectile.el")))
 (global-set-key (kbd "C-c 4 f")  'projectile-find-file-other-window)
