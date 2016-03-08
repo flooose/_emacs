@@ -13,8 +13,9 @@
 ;; recursive minibuffers
 (setq enable-recursive-minibuffers t)
 
+(require 'cl-lib)
+
 ;; package.el
-(require 'cl)
 (require 'package)
 
 (add-hook 'after-init-hook 'global-company-mode)
