@@ -67,7 +67,7 @@
                  yaml-mode
                  yasnippet))
 
-(setq missing-packages (remove-if 'package-installed-p packages))
+(setq missing-packages (cl-remove-if 'package-installed-p packages))
 
 (setq package-user-dir "~/.emacs.d/elpa/")
 (add-to-list 'package-archives
