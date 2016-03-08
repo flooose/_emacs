@@ -4,6 +4,9 @@
 ;; disable scroll bar
 (set-scroll-bar-mode nil)
 
+;; what time is it?
+(display-time-mode 1)
+
 ;; we don't always want to do this manually
 (toggle-frame-maximized)
 
