@@ -62,7 +62,9 @@
 (setq package-list '(coffee-mode
 		     company
 		     counsel
-		     ;;flycheck
+		     elm-mode
+		     flycheck
+		     flycheck-elm
 		     ivy
 		     js2-mode
 		     json-mode
@@ -71,6 +73,7 @@
 		     ;; poly-R
 		     projectile
 		     rspec-mode
+		     rubocop
 		     web-mode
 		     which-key))
 
@@ -112,6 +115,32 @@
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 ;;(setq projectile-globally-ignored-directories (add-to-list 'projectile-globally-ignored-directories "node_modules"))
+
+;; rubocop
+(setq flycheck-global-modes '(ruby-mode coffee-mode jsx-ide js2-jsx-mode js2-mode javascript Javascript-IDE))
+(setq rubocop-check-command "docker exec -it webapp_rails_1 bundle exec rubocop --format emacs")
+(setq rubocop-check-command "~/.rbenv/shims/rubocop")
+(require 'flycheck) ;; This shouldn't need to be required, but somehow, without
+                    ;; this flycheck doesn't work
+;; In addition to adding an entry here for adding flycheck support for a new
+;; language, the above variable `flycheck-global-modes` has to have the
+;; languages major mode added to its list.
+(add-hook 'ruby-mode-hook #'rubocop-mode)
+
+;; flycheck
+(flycheck-add-mode 'javascript-eslint 'js2-mode)
+(flycheck-add-mode 'javascript-eslint 'Javascript-IDE)
+(flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+(flycheck-add-mode 'coffee-coffeelint 'coffee-mode)
+(flycheck-add-mode 'ruby-rubocop 'ruby-mode)
+(global-flycheck-mode)
+
+(require 'rspec-mode)
+(set-variable 'rspec-use-docker-when-possible t)
+;;(set-variable 'rspec-docker-command "docker-compose -f docker-compose.dev.yml exec")
+(set-variable 'rspec-docker-command "docker-compose -f docker-compose.dev.yml exec -e TEST_DEBUG=full")
+(set-variable 'rspec-docker-container "rails")
+(set-variable 'rspec-docker-cwd "")
 
 ;; which key
 (which-key-mode)
@@ -245,21 +274,6 @@
 ;; ;; see http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html for help
 ;; (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 ;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . js2-jsx-mode)) ;; enables jsx for all js files, should hurt anything, but in case it does, simply remove the '?' :)
-;; (setq flycheck-global-modes '(ruby-mode coffee-mode jsx-ide js2-jsx-mode js2-mode javascript Javascript-IDE))
-;; (require 'flycheck) ;; This shouldn't need to be required, but somehow, without
-;;                     ;; this flycheck doesn't work
-;; (setq-default flycheck-disabled-checkers
-;;               (append flycheck-disabled-checkers
-;;                       '(javascript-jshint)))
-;; ;; In addition to adding an entry here for adding flycheck support for a new
-;; ;; language, the above variable `flycheck-global-modes` has to have the
-;; ;; languages major mode added to its list.
-;; (flycheck-add-mode 'javascript-eslint 'js2-mode)
-;; (flycheck-add-mode 'javascript-eslint 'Javascript-IDE)
-;; (flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
-;; (flycheck-add-mode 'coffee-coffeelint 'coffee-mode)
-;; (flycheck-add-mode 'ruby-rubocop 'ruby-mode)
-;; (global-flycheck-mode)
 
 ;; ;; This should be the job of the linter and flycheck
 ;; (setq js2-strict-missing-semi-warning nil)
@@ -332,13 +346,6 @@
 ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 ;; (global-set-key (kbd "C-:") 'mc/mark-all-like-this)
-
-;; (require 'rspec-mode)
-;; (set-variable 'rspec-use-docker-when-possible t)
-;; ;;(set-variable 'rspec-docker-command "docker-compose -f docker-compose.dev.yml exec")
-;; (set-variable 'rspec-docker-command "docker-compose -f docker-compose.dev.yml exec -e TEST_DEBUG=full")
-;; (set-variable 'rspec-docker-container "rails")
-;; (set-variable 'rspec-docker-cwd "")
 
 ;; ;; (global-hl-line-mode 1) ; This is redundant, as it is a spacemacs default.
 ;; ;; (set-face-background 'highlight "#222")
