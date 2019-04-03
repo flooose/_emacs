@@ -55,6 +55,9 @@
 (dolist (item (nthcdr 2 (directory-files "~/.emacs.d/scripts-enabled/" t)))
   (load-file item))
 
+(add-to-list 'exec-path "/home/chris/.rbenv/shims")
+(add-to-list 'exec-path "/home/chris/.nvm/versions/node/v8.9.3/bin")
+
 ;; disable adding`# coding: utf-8' to the tops of ruby files
 (setq ruby-insert-encoding-magic-comment nil)
 (setq ruby-deep-arglist nil)
