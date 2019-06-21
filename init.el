@@ -125,7 +125,7 @@
 ;; ace-window
 (global-set-key (kbd "C-x o") 'ace-window)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
-(setq aw-ignore-current t)
+(setq aw-scope 'frame)
 
 ;; color theme
 (load-theme 'gruvbox-light-medium)
