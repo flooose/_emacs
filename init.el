@@ -13,7 +13,7 @@
 (setq indent-tabs-mode nil)
 
 ;; global font size
-(set-face-attribute 'default (selected-frame) :height 140)
+(set-face-attribute 'default nil :height 140)
 
 ;; what time is it?
 (display-time-mode 1)
