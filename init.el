@@ -140,7 +140,6 @@
 ;; projectile
 (projectile-mode +1)
 (setq projectile-completion-system 'ivy)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 ;;(setq projectile-globally-ignored-directories (add-to-list 'projectile-globally-ignored-directories "node_modules"))
 
@@ -188,6 +187,7 @@
 
 ;; Yank keymap
 (global-set-key (kbd "C-x r e") 'er/expand-region)
+(global-set-key (kbd "C-x r c") 'er/contract-region)
 
 (defvar flooose-yank-keymap (make-sparse-keymap "yank**") "yank**")
 (define-key flooose-yank-keymap "l" (lambda () (interactive)
@@ -203,10 +203,16 @@
 (defvar flooose-git-map (make-sparse-keymap "git**") "git**")
 (define-key flooose-git-map "s" 'magit-status)
 (define-key flooose-git-map "b" 'magit-branch)
-(define-key flooose-git-map "g" 'counsel-git-grep)
 (define-key flooose-git-map "l" 'magit-log)
 (global-set-key (kbd "C-c g") flooose-git-map)
 
+(defvar flooose-search-map (make-sparse-keymap "search**") "git**")
+(define-key flooose-search-map "G" 'rgrep)
+(define-key flooose-search-map "g" 'counsel-git-grep)
+(define-key flooose-search-map "f" 'find-grep-dired)
+(global-set-key (kbd "C-c s") flooose-search-map)
+
+(global-set-key (kbd "C-c x") ctl-x-map)
 ;; Navigation keymap
 (setq flooose-navigation-keymap (make-sparse-keymap "navigate**"))
 (global-set-key (kbd "C-c n") flooose-navigation-keymap)
