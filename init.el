@@ -10,7 +10,7 @@
 (tool-bar-mode -1)
 
 ;; no tabs
-(setq indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 ;; global font size
 (set-face-attribute 'default nil :height 140)
@@ -289,10 +289,10 @@
 ;; (require 'ps-ccrypt "~/.emacs.d/private/modes/ps-ccrypt.el")
 
 ;; ;; We always want to indent 2
-;; (setq typescript-indent-level 2)
-;; (setq js2-basic-offset 2)
-;; (setq js-indent-level 2)
-;; (setq js3-indent-level 2)
+(setq typescript-indent-level 2)
+(setq js2-basic-offset 2)
+(setq js-indent-level 2)
+(setq js3-indent-level 2)
 
 ;; ;; tide typescript ide
 ;; (defun setup-tide-mode ()
