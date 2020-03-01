@@ -9,7 +9,7 @@
     ("2b9dc43b786e36f68a9fd4b36dd050509a0e32fe3b0a803310661edb7402b8b6" default)))
  '(package-selected-packages
    (quote
-    (highlight-indentation ace-window multiple-cursors haml-mode yaml-imenu yaml-mode expand-region ac-inf-ruby inf-ruby flycheck-elm elm elm-mode gruvbox-theme projectile json-mode js2-mode coffee-mode)))
+    (scss-mode typescript-mode flycheck-elm nvm minimap yasnippet lsp-mode haskell-mode highlight-indentation ace-window multiple-cursors haml-mode yaml-imenu yaml-mode expand-region ac-inf-ruby inf-ruby elm elm-mode gruvbox-theme projectile json-mode js2-mode coffee-mode)))
  '(safe-local-variable-values
    (quote
     ((flycheck-checker quote javascript-eslint)

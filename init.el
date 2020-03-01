@@ -52,7 +52,7 @@
 (delete-selection-mode 1)
 
 (add-to-list 'exec-path "/home/chris/.rbenv/shims")
-(add-to-list 'exec-path "/home/chris/.nvm/versions/node/v8.9.3/bin")
+;;(add-to-list 'exec-path "/home/chris/.nvm/versions/node/v8.9.3/bin")
 
 ;; disable adding`# coding: utf-8' to the tops of ruby files
 (setq ruby-insert-encoding-magic-comment nil)
@@ -144,8 +144,6 @@
 ;; yaml
 (yaml-imenu-enable)
 
-(setq rubocop-check-command "docker exec -it webapp_rails_1 bundle exec rubocop --format emacs")
-(setq rubocop-check-command "~/.rbenv/shims/rubocop")
 (require 'flycheck) ;; This shouldn't need to be required, but somehow, without
                     ;; this flycheck doesn't work
 ;; In addition to adding an entry here for adding flycheck support for a new
