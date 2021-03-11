@@ -9,6 +9,17 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
+;;;; Disable dangerous keys
+;; Don't accidentally hide emacs :/
+(define-key global-map (kbd "C-x C-z") nil)
+;; Don't accidentally close emacs
+(define-key global-map (kbd "C-x C-c") 'flooose-yes-really-close-emacs)
+(defun flooose-yes-really-close-emacs (arg)
+  (interactive "p")
+  (if (> arg 1)
+      (save-buffers-kill-terminal)
+    (message "Use with prefix-argument, if you really want to exit")))
+
 ;; no tabs
 (setq-default indent-tabs-mode nil)
 
